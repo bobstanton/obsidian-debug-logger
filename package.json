@@ -1,0 +1,29 @@
+{
+  "name": "obsidian-debug-logger",
+  "version": "1.0.0",
+  "description": "Shared in-memory debug logger with scoped entries and copyable exports",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "license": "AGPL-3.0-only",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint src",
+    "prepare": "npm run build",
+    "prepack": "npm run build",
+    "test": "npm run build && node --test test/*.test.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.62.0",
+    "@typescript-eslint/parser": "^8.62.0",
+    "eslint": "^10.5.0",
+    "typescript": "^6.0.3"
+  }
+}
